@@ -65,6 +65,7 @@ def squared():
     por = equation.get()
     por = por + "^2"
     equation.set(por)
+
 equation = tk.StringVar()
 Entry_entry = tk.Entry(root, textvariable=equation)
 Entry_entry.grid(row=1, column=1)

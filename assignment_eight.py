@@ -59,13 +59,18 @@ def divide():
     equation.set(dar)
 def square_root():
     squar = equation.get()
-    squar = squar + "^(1/2)"
+    squar = float(squar) ** "^(1/2)"
     equation.set(squar)
 def squared():
     por = equation.get()
-    por = por + "^2"
+    por = float(por) ** "^2"
     equation.set(por)
-
+def clear():
+    pass
+def enter():
+    ent = equation.get()
+    ans = eval(ent)
+    equation.set(ans)
 equation = tk.StringVar()
 Entry_entry = tk.Entry(root, textvariable=equation)
 Entry_entry.grid(row=1, column=1)
@@ -100,5 +105,9 @@ divide.grid(row=4, column=4)
 square_root = tk.Button(root, text="^(1/2)", command=square_root)
 square_root.grid(row=5, column=4)
 squared = tk.Button(root, text="^2", command=squared)
-squared.grid(row=6, column=4)
+squared.grid(row=5, column=3)
+enter = tk.Button(root, text="=", command=enter)
+enter.grid(row=5, column=3)
+CE = tk.Button(root, text="CE", command=clear)
+CE.grid(row=6, column=4)
 root.mainloop()
